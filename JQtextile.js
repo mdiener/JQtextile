@@ -72,7 +72,7 @@
 				}
 				
 				//Have any style settings been specified
-				var style_settings = /\{(\S+)\}/.exec(this_string);
+				var style_settings = /\{(.+)\}/.exec(this_string);
 				if(style_settings){
 					this_style += style_settings[1];
 					if(!style_settings[1].match(/;$/)){
@@ -243,7 +243,7 @@
 				var list_end = "";
 				var list_level = 0;
 				var list_start = "";
-				var para_regex = /^p(\S*)\.\s*(.*)/;
+				var para_regex = /^p(\{.*\})\.\s*(.*)/;
 				var table_regex = /^table\s*\{(.*)\}\..*/;
 				var table_row_style = /^\{(\S+)\}\.\s*\|/;
 
@@ -488,3 +488,4 @@
 	};
 		
 })(jQuery);
+
